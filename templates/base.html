@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/mangamers.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>{% block title %}Mangamers{% endblock %}</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    {% block nav %}
+        <a class="navbar-brand" href="/admin">Administration</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Accueil<span class=" sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mangas' %}">Mangas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'animes' %}">Animes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'videogames' %}">Jeux Vidéos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Recherche">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+            </form>
+        </div>
+    {% endblock %}
+</nav>
+<section id="content">
+    {% block content %}{% endblock %}
+</section>
+<hr>
+<footer>&copy; Copyright @ Samy Chaabi </footer>
+<a href="cgu">CGU</a>
+</body>
+</html>

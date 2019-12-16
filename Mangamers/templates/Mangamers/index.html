@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Mangamers - Accueil{% endblock %}
+{% block content %}
+    <h1>Mangamers</h1>
+    <p>Bienvenue sur Mangamers, la communauté Manga et Gamers</p>
+    <div id="carouselSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ manga.img.url }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ videogame.img.url }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ anime.img.url }}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+{% endblock %}

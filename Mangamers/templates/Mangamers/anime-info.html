@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ anime.title }}{% endblock %}
+{% block content %}
+    <div class="card">
+        <h1>{{ anime.title }} <span class="badge badge-info">{{ anime.category.name }}</span></span></h1>
+        <p class="infos">Réalisé par {{ anime.realisator }}, le {{ anime.release_date|date:"DATE_FORMAT" }}</p>
+        <div class="content">{{ anime.content|linebreaks }}</div>
+    </div>
+{% endblock %}

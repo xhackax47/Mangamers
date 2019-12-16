@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Mangamers - Animes{% endblock %}
+{% block content %}
+    <h1>Liste d'Animes</h1>
+    <div align="center">
+        <hr>
+        <a class="btn btn-success" href="{% url 'new_anime' %}">Ajouter un Anime</a>
+        <hr>
+        {% for anime in all_animes %}
+            <div class="card text-center" style="width: 20%;">
+                <h3 class="card-title">{{ anime.title }}</h3>
+                <img src="{{ anime.img.url }}" class="card-img-top">
+                <div class="card-body">
+                    <p>{{ anime.content|truncatewords_html:80 }}</p>
+                    <p><a href="{% url 'anime_info' id=anime.id slug=anime.slug %}">Lire la suite</a></p>
+                </div>
+                <a class="btn btn-danger" href="">Supprimer Anime</a>
+                <a class="btn btn-warning" href="">Modifier Anime</a>
+            </div>
+            <br/>
+        {% empty %}
+            <p>Aucun anime.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

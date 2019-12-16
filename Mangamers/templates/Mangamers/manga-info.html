@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}{{ manga.title }}{% endblock %}
+{% block content %}
+    <h1>{{ manga.title }} <span class="badge badge-info">{{ manga.category.name }}</span></h1>
+    <p class="infos">Crée par {{ manga.author }}, le {{ manga.release_date|date:"DATE_FORMAT" }}</p>
+    <div class="content">{{ manga.content|linebreaks }}</div>
+{% endblock %}

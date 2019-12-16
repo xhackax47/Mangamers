@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Ajouter un Anime{% endblock %}
+{% block content %}
+    <h1>Nouvel Anime</h1>
+    <div class="container">
+
+        {% if sauvegarde %}
+            <p>Cet anime a bien été enregistré.</p>
+        {% endif %}
+
+        <form method="post" enctype="multipart/form-data" action=".">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-success">
+        </form>
+    </div>
+{% endblock %}
